@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "09940D1268E504FBA1378FDD4158742CD2FD99C7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "068FBBD9E3850D02029739EDCE316A23C69CFFA7" : 0,
+    "09940D1268E504FBA1378FDD4158742CD2FD99C7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AB9FE612-6D60-4839-B517-4CB71D02E763",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "068FBBD9E3850D02029739EDCE316A23C69CFFA7" : "",
+    "09940D1268E504FBA1378FDD4158742CD2FD99C7" : "PizzaPersonalizada\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PizzaPersonalizada",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PizzaPersonalizada.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/joshevers86\/Juego-de-memoria.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "068FBBD9E3850D02029739EDCE316A23C69CFFA7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/joshevers86\/PizzaPersonalizada.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "09940D1268E504FBA1378FDD4158742CD2FD99C7"
+    }
+  ]
+}

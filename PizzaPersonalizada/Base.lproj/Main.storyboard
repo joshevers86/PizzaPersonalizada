@@ -253,6 +253,12 @@
                             <pickerView contentMode="bottom" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="myK-xN-dj8">
                                 <rect key="frame" x="141" y="204" width="320" height="216"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWB-Fo-jZb">
+                                <rect key="frame" x="292" y="524" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -262,11 +268,13 @@
                             <constraint firstItem="cFw-06-a1G" firstAttribute="leading" secondItem="DrW-Uc-wrc" secondAttribute="leading" id="MYd-01-0Iw"/>
                             <constraint firstItem="BWz-SK-Yag" firstAttribute="baseline" secondItem="cFw-06-a1G" secondAttribute="baseline" id="Q0k-vR-9Mw"/>
                             <constraint firstItem="myK-xN-dj8" firstAttribute="centerX" secondItem="BWz-SK-Yag" secondAttribute="centerX" constant="-13" id="TUy-QI-VI9"/>
+                            <constraint firstItem="YWB-Fo-jZb" firstAttribute="centerX" secondItem="FgS-3v-InG" secondAttribute="centerX" id="XW6-nS-PoU"/>
                             <constraint firstItem="DrW-Uc-wrc" firstAttribute="top" secondItem="liW-Bi-vs0" secondAttribute="bottom" constant="16" id="arQ-P7-05N"/>
                             <constraint firstItem="FgS-3v-InG" firstAttribute="top" secondItem="vGz-TL-YPG" secondAttribute="bottom" constant="8" id="axg-0x-1ZQ"/>
                             <constraint firstItem="qiI-ft-9Zn" firstAttribute="top" secondItem="cFw-06-a1G" secondAttribute="bottom" constant="138" id="bUK-Bc-tJz"/>
                             <constraint firstItem="myK-xN-dj8" firstAttribute="centerX" secondItem="Y5z-Vg-h4h" secondAttribute="centerX" constant="0.5" id="cC5-lY-tbL"/>
                             <constraint firstItem="FgS-3v-InG" firstAttribute="centerX" secondItem="Y5z-Vg-h4h" secondAttribute="centerX" constant="13" id="fbD-EC-AIW"/>
+                            <constraint firstItem="qiI-ft-9Zn" firstAttribute="top" secondItem="YWB-Fo-jZb" secondAttribute="bottom" constant="55" id="k23-js-02B"/>
                             <constraint firstItem="cFw-06-a1G" firstAttribute="top" secondItem="myK-xN-dj8" secondAttribute="bottom" constant="12" id="lgm-fm-PAY"/>
                             <constraint firstItem="vGz-TL-YPG" firstAttribute="top" secondItem="myK-xN-dj8" secondAttribute="bottom" constant="54" id="nby-q8-PPe"/>
                             <constraint firstItem="vGz-TL-YPG" firstAttribute="centerX" secondItem="Y5z-Vg-h4h" secondAttribute="centerX" constant="13" id="nuG-zZ-dGb"/>
@@ -277,6 +285,7 @@
                     <navigationItem key="navigationItem" title="Ingredientes" id="3Ub-af-H96"/>
                     <connections>
                         <outlet property="mosIngred" destination="vGz-TL-YPG" id="oZJ-iv-2wl"/>
+                        <outlet property="numSelIngredientes" destination="YWB-Fo-jZb" id="1FV-1u-LQe"/>
                         <outlet property="selIngrediente" destination="myK-xN-dj8" id="z1R-Sr-dgq"/>
                     </connections>
                 </viewController>

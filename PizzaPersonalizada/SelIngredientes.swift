@@ -20,6 +20,7 @@ class SelIngredientes: UIViewController , UIPickerViewDataSource, UIPickerViewDe
     var tipMasa:String = ""
     var tipQueso:String = ""
     
+    @IBOutlet weak var numSelIngredientes: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,7 @@ class SelIngredientes: UIViewController , UIPickerViewDataSource, UIPickerViewDe
     }
 func addIngrediente(){
     if (listaSeleccionada.count < 5){
+        numSelIngredientes.text = "Nº Ingredientes selecionados \(listaSeleccionada.count+1)"
         listaSeleccionada.append(mosIngred.text!)
     }
 }
@@ -112,6 +114,11 @@ func addIngrediente(){
                     break
                 }
                 contar = contar + 1
+            }
+            if listaSeleccionada.count == 0 {
+                numSelIngredientes.text = "Nº Ingredientes selecionados \(listaSeleccionada.count)"
+            }else{
+            numSelIngredientes.text = "Nº Ingredientes selecionados \(listaSeleccionada.count-1)"
             }
         }
 
