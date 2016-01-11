@@ -428,6 +428,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCF-cY-Pca">
+                                <rect key="frame" x="251" y="449" width="99" height="30"/>
+                                <state key="normal" title="Volver al Inicio"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Bi6-zM-Pls"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -435,12 +442,14 @@
                             <constraint firstItem="7jN-Sy-vmQ" firstAttribute="top" secondItem="Rad-bW-JTs" secondAttribute="bottom" constant="87" id="TSQ-RJ-Ga3"/>
                             <constraint firstItem="8ef-Vl-DkW" firstAttribute="centerX" secondItem="p9O-eg-qdq" secondAttribute="centerX" id="UMh-SO-P9U"/>
                             <constraint firstItem="7jN-Sy-vmQ" firstAttribute="centerX" secondItem="p9O-eg-qdq" secondAttribute="centerX" id="XEG-lW-PCN"/>
+                            <constraint firstItem="nVX-If-nCh" firstAttribute="top" secondItem="cCF-cY-Pca" secondAttribute="bottom" constant="121" id="aUy-cp-mlv"/>
+                            <constraint firstItem="cCF-cY-Pca" firstAttribute="centerX" secondItem="8ef-Vl-DkW" secondAttribute="centerX" id="bxd-m9-abc"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uf3-Qd-3M6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4678" y="303"/>
+            <point key="canvasLocation" x="1521" y="1065"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g9m-VF-Tjb">
@@ -461,4 +470,7 @@
             <point key="canvasLocation" x="245" y="303"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bi6-zM-Pls"/>
+    </inferredMetricsTieBreakers>
 </document>
