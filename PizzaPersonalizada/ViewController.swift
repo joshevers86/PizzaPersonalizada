@@ -12,14 +12,16 @@ class ViewController: UIViewController , UIPickerViewDataSource, UIPickerViewDel
 
     @IBOutlet weak var selPizza: UIPickerView!
     @IBOutlet weak var mosSelPizza: UILabel!
-    var tiposPizzas = ["Chica", "Mediana", "Grande"]
+    var tiposPizzas:[String] = ["Peqeña", "Mediana", "Grande"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.selPizza.showsSelectionIndicator = true
         self.selPizza.delegate = self
         self.selPizza.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +46,10 @@ class ViewController: UIViewController , UIPickerViewDataSource, UIPickerViewDel
         mosSelPizza.text = tiposPizzas[row]
         
     }
+    override func viewWillAppear(animated: Bool) {
+        mosSelPizza.text = tiposPizzas[self.selPizza.selectedRowInComponent(0)]
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let sel = mosSelPizza.text!

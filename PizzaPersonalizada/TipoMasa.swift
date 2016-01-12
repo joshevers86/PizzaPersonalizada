@@ -48,6 +48,9 @@ class TipoMasa: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate{
         mosTipMasa.text = tiposMasa[row]
         
     }
+    override func viewWillAppear(animated: Bool) {
+        mosTipMasa.text = tiposMasa[self.selTipMasa.selectedRowInComponent(0)]
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

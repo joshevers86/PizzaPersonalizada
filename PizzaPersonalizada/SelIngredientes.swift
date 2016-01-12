@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SelIngredientes: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate {
+class SelIngredientes: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var mosIngred: UILabel!
     @IBOutlet weak var selIngrediente: UIPickerView!
 
@@ -67,6 +68,8 @@ func addIngrediente(){
         numSelIngredientes.text = "Nº Ingredientes selecionados \(listaSeleccionada.count+1)"
         listaSeleccionada.append(mosIngred.text!)
     }
+    
+    
 }
 
     @IBAction func mostrarIngredientes(sender: AnyObject) {
@@ -75,14 +78,13 @@ func addIngrediente(){
     func imprimirIngedientes(){
         var mensaje = ""
         for ls in listaSeleccionada {
-            mensaje = mensaje + "\(ls)\n"
+            mensaje = mensaje + "\n\(ls)"
             print("\(ls)")
         }
-        let alert = UIAlertController()
-        alert.title = "Ingredientes seleccionados"
-        alert.message = mensaje
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
-        presentViewController(alert, animated: true , completion: nil)
+        let alertController = UIAlertController(title: "Ingredientes seleccionados:", message: mensaje, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     
@@ -102,6 +104,11 @@ func addIngrediente(){
         sigVista.tamPizza = tamPizza
     
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        mosIngred.text = ingredientes[self.selIngrediente.selectedRowInComponent(0)]
+        numSelIngredientes.text = "Nº Ingredientes selecionados 0"
     }
     
     //elimina elemento del vector segun su posicion

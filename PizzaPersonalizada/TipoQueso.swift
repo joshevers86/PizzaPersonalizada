@@ -50,6 +50,10 @@ class TipoQueso: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate 
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        mosTipoQues.text = tipoQueso[self.selTipoQues.selectedRowInComponent(0)]
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         let sigVista = segue.destinationViewController as! SelIngredientes

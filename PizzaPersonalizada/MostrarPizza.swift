@@ -10,6 +10,7 @@ import UIKit
 
 class MostrarPizza: UIViewController {
 
+    @IBOutlet weak var bConfirmar: UIButton!
     @IBOutlet weak var tPizza: UILabel!
     var tamPizza: String = ""
     
@@ -30,6 +31,7 @@ class MostrarPizza: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +40,7 @@ class MostrarPizza: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.bConfirmar.enabled = false
         super.viewWillAppear(animated)
         tPizza.text=tamPizza
         tMasa.text=tipMasa
@@ -47,22 +50,22 @@ class MostrarPizza: UIViewController {
         }
         
         tIngredientes.text = ingr
+        
+        if ((tPizza.text?.isEmpty) == true) || ((tMasa.text?.isEmpty) == true) || ((tQueso.text?.isEmpty) == true) || (tIngredientes.text.isEmpty == true){
+            
+            let alertController = UIAlertController(title: "Revisa los campos de seleccion de la pizza", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        }else{
+            self.bConfirmar.enabled = true
+        }
     }
     
     
     @IBAction func validarConfirmación(sender: AnyObject) {
-        if ((tPizza.text?.isEmpty) == true) || ((tMasa.text?.isEmpty) == true) || ((tQueso.text?.isEmpty) == true) || (tIngredientes.text.isEmpty == true){
-            
-            
-            let mensaje = "Revisa los campos de seleccion de la pizza"
-            let alert = UIAlertController()
-            alert.title = "Pizza mal configurada"
-            alert.message = mensaje
-            alert.addAction(UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.Default,handler: nil))
-            presentViewController(alert, animated: true , completion: nil)
-            
-            
-        }
+
     }
     
 
