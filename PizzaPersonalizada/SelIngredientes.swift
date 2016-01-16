@@ -122,11 +122,11 @@ func addIngrediente(){
                 }
                 contar = contar + 1
             }
-            if listaSeleccionada.count == 0 {
+            /*if listaSeleccionada.count == 0 {
                 numSelIngredientes.text = "Nº Ingredientes selecionados \(listaSeleccionada.count)"
-            }else{
-            numSelIngredientes.text = "Nº Ingredientes selecionados \(listaSeleccionada.count-1)"
-            }
+            }else{*/
+            numSelIngredientes.text = "Nº Ingredientes selecionados \(listaSeleccionada.count)"
+            //}
         }
 
     }
