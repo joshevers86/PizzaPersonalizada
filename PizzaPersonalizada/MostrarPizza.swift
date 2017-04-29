@@ -39,8 +39,8 @@ class MostrarPizza: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.bConfirmar.enabled = false
+    override func viewWillAppear(_ animated: Bool) {
+        self.bConfirmar.isEnabled = false
         super.viewWillAppear(animated)
         tPizza.text=tamPizza
         tMasa.text=tipMasa
@@ -53,18 +53,18 @@ class MostrarPizza: UIViewController {
         
         if ((tPizza.text?.isEmpty) == true) || ((tMasa.text?.isEmpty) == true) || ((tQueso.text?.isEmpty) == true) || (tIngredientes.text.isEmpty == true){
             
-            let alertController = UIAlertController(title: "Revisa los campos de seleccion de la pizza", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.Default,handler: nil))
+            let alertController = UIAlertController(title: "Revisa los campos de seleccion de la pizza", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.default,handler: nil))
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
             
         }else{
-            self.bConfirmar.enabled = true
+            self.bConfirmar.isEnabled = true
         }
     }
     
     
-    @IBAction func validarConfirmación(sender: AnyObject) {
+    @IBAction func validarConfirmación(_ sender: AnyObject) {
 
     }
     

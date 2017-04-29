@@ -40,27 +40,27 @@ class SelIngredientes: UIViewController , UIPickerViewDataSource, UIPickerViewDe
     
 
 
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1 // its for components that showing in your pickerview
     }
     
     // returns the # of rows in each component..
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         return ingredientes.count // its for showing number of row in per component
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return ingredientes[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         mosIngred.text = ingredientes[row]
         
     }
     
     
-    @IBAction func anyadirIngrediente(sender: AnyObject) {
+    @IBAction func anyadirIngrediente(_ sender: AnyObject) {
         addIngrediente()
     }
 func addIngrediente(){
@@ -72,7 +72,7 @@ func addIngrediente(){
     
 }
 
-    @IBAction func mostrarIngredientes(sender: AnyObject) {
+    @IBAction func mostrarIngredientes(_ sender: AnyObject) {
         imprimirIngedientes()
     }
     func imprimirIngedientes(){
@@ -81,23 +81,23 @@ func addIngrediente(){
             mensaje = mensaje + "\n\(ls)"
             print("\(ls)")
         }
-        let alertController = UIAlertController(title: "Ingredientes seleccionados:", message: mensaje, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        let alertController = UIAlertController(title: "Ingredientes seleccionados:", message: mensaje, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     
 
     
-    @IBAction func eliminarIngrediente(sender: AnyObject) {
+    @IBAction func eliminarIngrediente(_ sender: AnyObject) {
         delIngrediente()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let resu = listaSeleccionada
        
-        let sigVista = segue.destinationViewController as! MostrarPizza
+        let sigVista = segue.destination as! MostrarPizza
         sigVista.ingredientes=resu
         sigVista.tipQueso = tipQueso
         sigVista.tipMasa = tipMasa
@@ -106,8 +106,8 @@ func addIngrediente(){
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        mosIngred.text = ingredientes[self.selIngrediente.selectedRowInComponent(0)]
+    override func viewWillAppear(_ animated: Bool) {
+        mosIngred.text = ingredientes[self.selIngrediente.selectedRow(inComponent: 0)]
         numSelIngredientes.text = "Nº Ingredientes selecionados 0"
     }
     
@@ -117,7 +117,7 @@ func addIngrediente(){
             var contar = 0
             for ls in listaSeleccionada{
                 if ls == mosIngred.text! {
-                    listaSeleccionada.removeAtIndex(contar)
+                    listaSeleccionada.remove(at: contar)
                     break
                 }
                 contar = contar + 1

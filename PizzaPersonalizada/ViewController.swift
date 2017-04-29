@@ -28,32 +28,32 @@ class ViewController: UIViewController , UIPickerViewDataSource, UIPickerViewDel
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1 // its for components that showing in your pickerview
     }
     
     // returns the # of rows in each component..
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         return tiposPizzas.count // its for showing number of row in per component
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return tiposPizzas[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         mosSelPizza.text = tiposPizzas[row]
         
     }
-    override func viewWillAppear(animated: Bool) {
-        mosSelPizza.text = tiposPizzas[self.selPizza.selectedRowInComponent(0)]
+    override func viewWillAppear(_ animated: Bool) {
+        mosSelPizza.text = tiposPizzas[self.selPizza.selectedRow(inComponent: 0)]
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sel = mosSelPizza.text!
-        let sigVista = segue.destinationViewController as! TipoMasa
+        let sigVista = segue.destination as! TipoMasa
         sigVista.tamPizza = sel
     }
 

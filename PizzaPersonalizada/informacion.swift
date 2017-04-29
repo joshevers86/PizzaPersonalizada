@@ -24,7 +24,7 @@ class informacion: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         for ls in ingredientes{
             ingr = ingr + "\(ls) \n"

@@ -31,32 +31,32 @@ class TipoQueso: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate 
     }
     
 
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1 // its for components that showing in your pickerview
     }
     
     // returns the # of rows in each component..
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         return tipoQueso.count // its for showing number of row in per component
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return tipoQueso[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         mosTipoQues.text = tipoQueso[row]
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        mosTipoQues.text = tipoQueso[self.selTipoQues.selectedRowInComponent(0)]
+    override func viewWillAppear(_ animated: Bool) {
+        mosTipoQues.text = tipoQueso[self.selTipoQues.selectedRow(inComponent: 0)]
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let sigVista = segue.destinationViewController as! SelIngredientes
+        let sigVista = segue.destination as! SelIngredientes
         sigVista.tipQueso = mosTipoQues.text!
         sigVista.tipMasa = tipMasa
         sigVista.tamPizza = tamPizza
